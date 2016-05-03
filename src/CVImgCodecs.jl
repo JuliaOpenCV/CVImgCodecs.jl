@@ -52,7 +52,7 @@ for name in [
     :IMWRITE_PNG_STRATEGY_RLE,
     :IMWRITE_PNG_STRATEGY_FIXED,
     ]
-    ex = Expr(:macrocall, symbol("@icxx_str"), string("cv::", name, ";"))
+    ex = Expr(:macrocall, Symbol("@icxx_str"), string("cv::", name, ";"))
     @eval global const $name = $ex
 end
 
