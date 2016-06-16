@@ -61,7 +61,7 @@ function imread(name::AbstractString, flag=IMREAD_UNCHANGED)
 end
 
 imwrite(filename::AbstractString, img::AbstractCvMat) =
-    icxx"cv::imwrite($(pointer(filename)), $(img.handle);"
+    icxx"cv::imwrite($(pointer(filename)), $(img.handle));"
 imwrite(filename::AbstractString, img::AbstractCvMat, params) =
     icxx"cv::imwrite($(pointer(filename)), $(img.handle), $params);"
 
